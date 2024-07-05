@@ -24,8 +24,10 @@ Built with: React, Vite, and Tailwindcss and Framer Motion.
 
 Installation
 Clone the repository: git clone https://github.com/anuragdwi55/Bite-Bliss.git
-Install dependencies: npm install
-Run the app: npm run dev
+
+* Install dependencies: npm install
+
+* Run the app: npm run dev
 
 Currently, two official plugins are available:
 
