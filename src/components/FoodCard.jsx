@@ -23,7 +23,9 @@ const FoodCard = ({ id, name, price, desc, img, rating, handleToast }) => {
           <h2 className="text-lg font-semibold">{name}</h2>
           <span className="text-green-500">₹{price}</span>
         </div>
-        <p className="text-sm text-gray-600">{desc.slice(0, 50)}...</p>
+        <p className="text-sm text-gray-600">
+          {desc.slice(0, 50)}...
+        </p>
       </div>
       <div className="flex justify-between items-center mt-4">
         <span className="flex items-center text-yellow-400">

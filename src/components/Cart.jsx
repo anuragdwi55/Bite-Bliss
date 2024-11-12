@@ -19,18 +19,15 @@ const Cart = () => {
     <>
       {activeCart && (
         <div
-          className="fixed top-0 right-0 w-80 h-full bg-white shadow-md z-50 overflow-y-auto transition-transform"
-          style={{
-            transform: activeCart ? "translateX(0)" : "translateX(100%)",
-            opacity: activeCart ? 1 : 0,
-          }}
+          className="fixed top-0 right-0 w-full md:w-[400px] h-full bg-white shadow-lg z-50 overflow-y-scroll transition-transform transform translate-x-0"
+          style={{ transform: activeCart ? 'translateX(0)' : 'translateX(100%)', opacity: activeCart ? 1 : 0 }}
         >
-          <div className="p-4 flex flex-col h-full">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold">My Order</h2>
+          <div className="p-6 flex flex-col h-full">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-800">My Order</h2>
               <button
                 onClick={() => setActiveCart(false)}
-                className="text-gray-600"
+                className="text-gray-600 hover:text-red-500 transition-colors"
               >
                 <IoMdClose size={24} />
               </button>
@@ -43,9 +40,7 @@ const Cart = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-center text-gray-500 mt-10">
-                Your cart is empty
-              </p>
+              <p className="text-center text-gray-500 mt-10">Your cart is empty</p>
             )}
 
             <div className="mt-auto">
@@ -53,13 +48,13 @@ const Cart = () => {
                 <span className="text-gray-600">Items:</span>
                 <span className="font-semibold">{totalQty}</span>
               </div>
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex justify-between items-center mb-6">
                 <span className="text-gray-600">Total Amount:</span>
-                <span className="font-semibold">${totalPrice.toFixed(2)}</span>
+                <span className="font-semibold text-xl">${totalPrice.toFixed(2)}</span>
               </div>
               <button
                 onClick={() => navigate("/success")}
-                className="w-full bg-green-500 text-white py-2 rounded"
+                className="w-full bg-gradient-to-r from-green-400 to-green-600 text-white font-bold py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
               >
                 Checkout
               </button>
@@ -70,9 +65,7 @@ const Cart = () => {
 
       <button
         onClick={() => setActiveCart(!activeCart)}
-        className={`fixed bottom-6 right-6 rounded-full bg-purple-500 text-white p-3 ${
-          totalQty > 0 && "animate-bounce"
-        }`}
+        className={`fixed bottom-6 right-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg p-4 ${totalQty > 0 && "animate-bounce"}`}
       >
         <FaShoppingCart size={24} />
         {totalQty > 0 && (
