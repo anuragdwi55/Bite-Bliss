@@ -3,7 +3,6 @@ import FoodCard from "./FoodCard";
 import FoodData from "../data/FoodData.js";
 import toast, { Toaster } from "react-hot-toast";
 import { useSelector } from "react-redux";
-import { motion } from "framer-motion";
 
 const FoodItems = () => {
   const category = useSelector((state) => state.category.category);
@@ -19,14 +18,9 @@ const FoodItems = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="flex flex-wrap gap-10 justify-center lg:justify-start mx-6 my-10">
+      <div className="flex flex-wrap gap-6 justify-center lg:justify-start mx-6 my-6 ml-28">
         {filteredFoodData.map((food) => (
-          <motion.div
-            key={food.id}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="cursor-pointer"
-          >
+          <div key={food.id} className="cursor-pointer">
             <FoodCard
               id={food.id}
               name={food.name}
@@ -36,7 +30,7 @@ const FoodItems = () => {
               img={food.img}
               handleToast={handleToast}
             />
-          </motion.div>
+          </div>
         ))}
       </div>
     </>
