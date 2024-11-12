@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-// src/firebase.js
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import firebaseConfig from "./config/firebaseConfig";  // Import the config file
-=======
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
@@ -16,7 +10,6 @@ const firebaseConfig = {
   messagingSenderId: "747789281448",
   appId: "1:747789281448:web:58d240e687d75c81937a9d",
 };
->>>>>>> 9a53048f052128ae592ed32e1a20031ae3b4320f
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);

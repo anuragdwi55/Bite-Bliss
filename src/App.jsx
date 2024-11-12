@@ -15,14 +15,9 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-<<<<<<< HEAD
-        <Route path="/success" element={<Success />} />
-        <Route path="*" element={<Error />} />
-=======
         <Route path="/success" element={<Success/>} />
         <Route path="*" element={<Error/>} />
         
->>>>>>> 9a53048f052128ae592ed32e1a20031ae3b4320f
       </Routes>
     </BrowserRouter>
   );
